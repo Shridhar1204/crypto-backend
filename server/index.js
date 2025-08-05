@@ -12,6 +12,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
+const cors = require("cors");
+app.use(cors({
+  origin: "https://crypto-portfolio.vercel.app",
+  credentials: true
+}));
+
 
 app.use('/auth', AuthRouter);
 app.use('/holdings', HoldingRouter);
